@@ -1,0 +1,123 @@
+/* ======================================= */
+/* 1. Page Layout & Form Container */
+/* ======================================= */
+
+.register-main {
+    padding-top: var(--spacing-md);
+    padding-bottom: var(--spacing-lg);
+    background-color: var(--color-secondary);
+    min-height: calc(100vh - 150px); /* Ensures the background covers the page */
+}
+
+.form-container {
+    max-width: 450px;
+    margin: 0 auto;
+    background-color: white;
+    padding: var(--spacing-md);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.form-header {
+    font-size: 1.8rem;
+    color: #FB6376;
+    margin-bottom: var(--spacing-sm);
+}
+
+.auth-form {
+    padding-top: var(--spacing-md);
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: var(--spacing-sm);
+    text-align: left;
+}
+
+.auth-form.hidden {
+    display: none;
+}
+
+.auth-form .form-control {
+    margin-bottom: var(--spacing-xs);
+}
+
+.auth-form label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 0.95em;
+    color: var(--color-muted);
+}
+
+.auth-form input,
+.auth-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: var(--font-sans);
+}
+
+.auth-form .full-width {
+    grid-column: 1 / -1;
+}
+
+.forgot-password {
+    display: block;
+    text-align: right;
+    margin-top: -5px;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* ======================================= */
+/* 2. Tab Navigation */
+/* ======================================= */
+
+.form-tabs {
+    display: flex;
+    border-bottom: 2px solid var(--color-secondary);
+    margin-bottom: -1px; /* Overlap border for clean look */
+}
+
+.tab-button {
+    flex-grow: 1;
+    background: none;
+    border: none;
+    padding: 15px 10px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1em;
+    color: var(--color-muted);
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-bottom-color 0.3s;
+}
+
+.tab-button:hover:not(.active) {
+    color: var(--color-primary);
+}
+
+.tab-button.active {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+}
+
+
+/* ======================================= */
+/* 3. Desktop Styles (Media Query) */
+/* ======================================= */
+
+@media (min-width: 600px) {
+    
+    .auth-form {
+        /* On wider screens, forms can have two columns for better flow */
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    #login-form {
+        /* Login form looks better centered with 1 column, even on desktop */
+        grid-template-columns: 1fr;
+    }
+
+    #login-form .form-control {
+        grid-column: 1 / -1;
+    }
+}

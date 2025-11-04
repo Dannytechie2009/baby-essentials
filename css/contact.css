@@ -1,0 +1,183 @@
+/* ======================================= */
+/* 1. Contact Layout & Form Styling */
+/* ======================================= */
+
+.large-text {
+    font-size: 1.15em;
+    margin-bottom: var(--spacing-lg);
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr; /* Stacked on mobile */
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Contact Info Sidebar */
+.contact-info {
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    height: fit-content;
+}
+
+.contact-info h3 {
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-md);
+}
+
+.info-group {
+    margin-bottom: var(--spacing-sm);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px dashed rgba(139, 153, 138, 0.3); /* Soft, dashed line */
+}
+
+.info-group h4 {
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--color-text);
+    margin-bottom: 4px;
+}
+
+.info-group p {
+    margin: 0;
+}
+
+/* Contact Form */
+.contact-form-section h3 {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-primary);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: var(--spacing-sm);
+}
+
+.form-control label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 0.95em;
+    color: var(--color-muted);
+}
+
+.form-control input:not([type="checkbox"]), 
+.form-control textarea,
+.form-control select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+    font-family: var(--font-sans);
+}
+
+.form-control input:focus, 
+.form-control textarea:focus,
+.form-control select:focus {
+    border-color: var(--color-primary);
+    outline: none;
+}
+
+.form-control.full-width {
+    grid-column: 1 / -1;
+}
+
+.send-btn {
+    margin-top: var(--spacing-sm);
+}
+
+.contact-divider {
+    border: 0;
+    border-top: 1px solid var(--color-secondary);
+    margin: var(--spacing-lg) 0;
+}
+
+
+/* ======================================= */
+/* 2. FAQ Accordion Styling */
+/* ======================================= */
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--color-secondary);
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 18px 0;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--color-text);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.faq-question::after {
+    content: '+'; /* Plus sign icon */
+    font-size: 1.5em;
+    color: var(--color-accent);
+    margin-left: 10px;
+    transition: transform 0.3s;
+}
+
+.faq-question[aria-expanded="true"]::after {
+    content: '-'; /* Minus sign icon when open */
+    transform: rotate(180deg);
+}
+
+.faq-question:hover {
+    color: var(--color-primary);
+}
+
+.faq-answer {
+    /* Hidden by default, controlled by JS setting max-height */
+    max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+    padding: 0 0 0 0;
+}
+
+.faq-answer p {
+    padding: 0 0 18px 0;
+    line-height: 1.6;
+    color: var(--color-muted);
+}
+
+
+/* ======================================= */
+/* 3. Laptop/Desktop Styles (Media Query) */
+/* ======================================= */
+
+@media (min-width: 900px) {
+    .contact-layout {
+        /* Side-by-side layout on desktop */
+        grid-template-columns: 1fr 2fr;
+    }
+    
+    .contact-info {
+        /* Stretches to the height of the form for a clean block look */
+        align-self: start; 
+    }
+    
+    .form-grid {
+        /* Two columns for inputs on desktop (Name/Email, Phone/Subject) */
+        grid-template-columns: 1fr 1fr; 
+    }
+    
+    .form-control.full-width {
+        grid-column: 1 / -1; /* Ensures textarea and message span both columns */
+    }
+}
