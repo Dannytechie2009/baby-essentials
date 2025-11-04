@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Kids & Momma Essentials — Contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/contact.css" /> 
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html">Kids &amp; Momma Essentials</a>
+            <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
+            <nav class="main-nav" id="main-nav">
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="register.html">Register</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+            <div class="tools">
+                <a class="login" href="register.html">Login / Register</a>
+                <button class="cart-btn">Cart (<span id="cart-count">0</span>)</button>
+            </div>
+        </div>
+    </header>
+    <main class="contact-main container section">
+        
+        <h1 class="contact-title center">How Can We Help?</h1>
+        <p class="center muted large-text">We're here to answer any questions about products, wholesale, or your order.</p>
+
+        <div class="contact-layout">
+            
+            <section class="contact-info pale">
+                <h3>Get in Touch Directly</h3>
+                <div class="info-group">
+                    <h4>Customer Care (WhatsApp Preferred)</h4>
+                    <p><a href="https://wa.me/2348077774929">+234 807 777 4929</a></p>
+                </div>
+                <div class="info-group">
+                    <h4>Email Address</h4>
+                    <p><a href="mailto:kidsandmomma@gmail.com">kidsandmomma@gmail.com</a></p>
+                </div>
+                <div class="info-group">
+                    <h4>Office Address (Ogba Pickup)</h4>
+                    <p>23 College Road, Opposite Assemblies of God Church, Ogba, Lagos.</p>
+                </div>
+                <div class="info-group">
+                    <h4>Hours</h4>
+                    <p>Mon - Fri: 9:00 AM - 5:00 PM</p>
+                </div>
+            </section>
+
+            <section class="contact-form-section">
+                <h3>Send Us a Message</h3>
+                <form id="contact-form" class="form-grid">
+                    
+                    <div class="form-control full-width">
+                        <label for="name">Your Name*</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-control">
+                        <label for="email">Email Address*</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-control">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-control full-width">
+                        <label for="subject">Subject*</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">-- Select Inquiry Type --</option>
+                            <option value="order">Order Inquiry</option>
+                            <option value="wholesale">Wholesale Registration</option>
+                            <option value="product">Product Question</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-control full-width">
+                        <label for="message">Message*</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn primary full-width send-btn">Send Message</button>
+                    <p class="form-note muted small full-width">We aim to respond within 24 hours.</p>
+                </form>
+            </section>
+        </div>
+
+        <hr class="contact-divider">
+
+        <section class="section">
+            <h2 class="section-title center">Frequently Asked Questions</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        What is the difference between wholesale and retail?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our **retail prices** are for single-item purchases by everyday customers. **Wholesale prices** are heavily discounted rates available to registered resellers who buy in bulk (usually a minimum of 6 units per product type). You can register for wholesale via the Register page.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        How long does delivery take?
+                    </button>
+                    <div class="faq-answer">
+                        <p>We offer Lagos pickup (Ogba) for free. Shipping within Lagos takes 1-2 business days, and nationwide delivery takes 3-7 business days, depending on your location. Delivery timelines begin after payment confirmation.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        What payment methods do you accept?
+                    </button>
+                    <div class="faq-answer">
+                        <p>We primarily use bank transfers and offer cash payment for Ogba pickups. We are working to integrate secured online card payment options in the near future.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            </div>
+        <div class="center muted small">
+            © <span id="year"></span> Kids &amp; Momma Essentials — All rights reserved.
+        </div>
+    </footer>
+    <script src="js/main.js"></script> <script src="js/contact.js"></script> <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

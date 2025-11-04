@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Kids & Momma Essentials — Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/shop.css" /> 
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html">Kids &amp; Momma Essentials</a>
+            <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
+            <nav class="main-nav" id="main-nav">
+                <a href="index.html">Home</a>
+                <a href="shop.html" class="active">Shop</a>
+                <a href="register.html">Register</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="tools">
+                <a class="login" href="register.html">Login / Register</a>
+                <button class="cart-btn">Cart (<span id="cart-count">0</span>)</button>
+            </div>
+        </div>
+    </header>
+    <main class="shop-main container">
+        
+        <p class="breadcrumbs small muted">Home / Shop / Baby Products</p>
+        
+        <h1 class="shop-title">All Products</h1>
+
+        <div class="shop-layout">
+            
+            <aside class="sidebar" id="filter-sidebar">
+                <button class="filter-toggle btn outline mobile-only">Show Filters</button>
+
+                <div class="filter-group">
+                    <h4 class="filter-title">Category</h4>
+                    <div class="filter-content">
+                        <label><input type="checkbox" name="category" value="baby"> Baby Products</label>
+                        <label><input type="checkbox" name="category" value="clothing"> Kids Clothing</label>
+                        <label><input type="checkbox" name="category" value="household"> Household</label>
+                        <label><input type="checkbox" name="category" value="toys"> Toys</label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h4 class="filter-title">Material</h4>
+                    <div class="filter-content">
+                        <label><input type="checkbox" name="material" value="cotton"> Organic Cotton</label>
+                        <label><input type="checkbox" name="material" value="bamboo"> Bamboo</label>
+                        <label><input type="checkbox" name="material" value="wood"> Natural Wood</label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h4 class="filter-title">Price Range</h4>
+                    <div class="filter-content">
+                        <label>Max Price: ₦<input type="number" id="max-price" value="10000" min="500"></label>
+                        <input type="range" min="500" max="25000" value="10000" class="price-slider">
+                    </div>
+                </div>
+            </aside>
+            
+            <section class="product-area">
+                
+                <div class="product-header">
+                    <p class="product-count muted small">Showing 1-12 of 85 results</p>
+                    <select class="sort-dropdown">
+                        <option value="default">Sort by Default</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="newest">Newest Arrivals</option>
+                    </select>
+                </div>
+                
+                <div class="products-grid" id="products-grid">
+                    
+                    <div class="product-card" data-category="baby" data-material="cotton">
+                        <div class="product-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1594928178652-32b535d2524d?auto=format&fit=crop&w=600&q=60" alt="Organic Baby Blanket" />
+                            <span class="product-badge accent">New</span>
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                        <h4 class="product-name">Soft Organic Baby Blanket</h4>
+                        <p class="product-category small muted">Baby Products</p>
+                        <div class="product-price">₦5,500</div>
+                        <button class="btn primary add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    
+                    <div class="product-card" data-category="clothing" data-material="bamboo">...</div>
+                    <div class="product-card" data-category="clothing" data-material="cotton">...</div>
+                    <div class="product-card" data-category="toys" data-material="wood">...</div>
+                    <div class="product-card" data-category="household">...</div>
+                    </div>
+                
+                <div class="pagination center">
+                    <a href="#" class="btn outline">1</a>
+                    <a href="#" class="btn primary">2</a>
+                    <a href="#">3</a>
+                    <span>...</span>
+                    <a href="#">Next &raquo;</a>
+                </div>
+                
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            </div>
+        <div class="center muted small">
+            © <span id="year"></span> Kids &amp; Momma Essentials — All rights reserved.
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="js/shop.js"></script> <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
